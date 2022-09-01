@@ -267,7 +267,7 @@ Levels:
 ########################################
 
 Tickets:
-    LimitPerUser: 5
+    LimitPerUser: 1
     RequireReason: false
     PingSupport: true
     PingUser: true
@@ -290,7 +290,7 @@ Tickets:
 
     Transcripts:
         Enabled: true
-        Channel: "transcripts"
+        Channel: "transcript"
         DMToUser: true
 
     ReactForTicket:
