@@ -650,7 +650,7 @@ AutoAnnouncements:
 ########################################
 
 ActivityCycling:
-    Enabled: false
+    Enabled: true
     Activities:
         - ["watching", "Tickets: {tickets}"]
         - ["playing", "Total Users: {users}"]
