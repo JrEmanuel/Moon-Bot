@@ -272,7 +272,7 @@ Tickets:
     PingSupport: true
     PingUser: true
     DMClosureReason: false
-    CloseConfirmation: false
+    CloseConfirmation: true
     CloseAllConfirmation: true
     SupportRole: "Support Team"
     TicketCreatedMessage:
