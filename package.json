@@ -5,7 +5,9 @@
     "main": "index.js",
     "scripts": {
         "start": "node . --no-install"
-        ```json```
+        "dev" : "node path/to/index.js"
+  }
+}
     },
     "engines": {
      "node": "16.17.0"
