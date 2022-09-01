@@ -1,0 +1,193 @@
+##############################
+#                            #
+#            MUSIC           #
+#                            #
+##############################
+
+Settings:
+  Lavalink:
+    Node:
+      # You will have to create a lava link server and use your server's credentials.
+      host: lavalink
+      port: 433
+      password: password
+  Spotify:
+    Enabled: false
+    ClientID: PUT-CLIENT-ID-HERE
+    ClientSecret: PUT-CLIENT-SECRET-HERE
+    # Create a Spotify application @ https://developer.spotify.com/dashboard to get the ID and secret
+  StopDelay:
+    Enabled: true
+    # If the bot should wait x amount of seconds before checking
+    # if the voice channel is still empty when someone leaves.
+    # Primarly for accidently channel disconnecting/switching
+    Delay: 10
+  SearchingType: first
+  # Types: response (respond with corresponding number), reaction (react with corresponding number), first (automatically choose first result)
+  NowPlayingMessage: true
+  DefaultVolume: 5
+  Commands:
+    Permissions:
+      play:
+        - "@everyone"
+      stop:
+        - "@everyone"
+      queue:
+        - "@everyone"
+      pause:
+        - "@everyone"
+      resume:
+        - "@everyone"
+      skip:
+        - "@everyone"
+      join:
+        - "@everyone"
+      musicemojis:
+        - Admin
+    Descriptions:
+      play: Play music in a voice channel
+      stop: Stop playing music
+      queue: View the list of queued songs
+      pause: Pause the currently playing song
+      resume: Resume the currently paused song
+      skip: Skip to the next song in the queue
+      join: Make the bot join your voice channel
+    Aliases:
+      play:
+        - p
+      stop:
+        - leave
+        - disconnect
+      queue:
+        - q
+      pause: []
+      resume: []
+      skip:
+        - next
+      join:
+        - connect
+Language:
+  Errors:
+    NotInVoiceChannel: You must be in a voice channel to run this command
+    NotInSameVoiceChannel: You must be in the same voice channel as me to run this command
+    VideoNotFound: A song could not be found with that link or search query. Try a
+      different link or query
+    VideoCouldNotLoad: The song could not be loaded. Try again
+    CanceledSearch: Canceled music search
+    InvalidNumber: That is not a valid number. Please choose the number that
+      corresponds with the video.
+    BotNotInVoiceChannel: I am not in a voice channel
+    NotPlayingMusic: Music is currently not being played
+    AlreadyPaused: The music is already paused
+    NotPaused: The music is not paused
+    AlreadyInYourVoiceChannel: I am already in your voice channel
+    AlreadyInAnotherVoiceChannel: I am already in another voice channel
+  Words:
+    None: None
+    Livestream: livestream
+    Nothing: Nothing
+    Unknown: Unknown
+    NotIncludingLives: Not including livestreams
+    Nobody: Nobody
+    Page: Page
+    YouTube: YouTube
+    SoundCloud: SoundCloud
+    Spotify: Spotify
+    Twitch: Twitch
+    LoadingPlaylist: Loading playlist...
+  NowPlaying:
+    Author: "{platform-name}"
+    AuthorIcon: "{platform-icon}"
+    Title: 🎶 Now Playing
+    Description: "[{song-title}]({song-link}) requested by {user-mention}"
+    Thumbnail: "{song-thumbnail}"
+    Timestamp: true
+    Footer: "{bot-username}"
+    FooterIcon: "{bot-pfp}"
+  QueueEnded:
+    Title: ⏹️ Queue Ended
+    Description: The music queue has been ended
+    Timestamp: true
+    Footer: "{bot-username}"
+    FooterIcon: "{bot-pfp}"
+  Queue:
+    Title: 📃 Music Queue
+    Description: |-
+      **Currently Playing:** [{song-title}]({song-link})
+
+      {queue}
+
+      **Total Queue Duration:** {duration}
+    Thumbnail: "{song-thumbnail}"
+    FooterIcon: "{bot-pfp}"
+  AddedPlaylistToQueue:
+    Title: ⤵️ Added Playlist To Queue
+    Description: Added playlist [{playlist-name}]({playlist-link}) to the queue
+      (**{playlist-length}** songs)
+    Thumbnail: "{playlist-thumbnail}"
+    Timestamp: true
+    Footer: "{bot-username}"
+    FooterIcon: "{bot-pfp}"
+  AddedSongToQueue:
+    Title: ⤵️ Added To Queue
+    Description: Added [{song-title}]({song-link}) to the queue
+    Thumbnail: "{song-thumbnail}"
+    Timestamp: true
+    Footer: "{bot-username}"
+    FooterIcon: "{bot-pfp}"
+  SearchResults:
+    Title: Search Results
+    Description: |-
+      Showing top 10 search results for `{search}`:
+      {results}
+    ResultsFormat: |-
+      **{position}.** [{song-title}]({song-link})
+      > By `{song-author}`
+    Timestamp: true
+    Footer: "{bot-username}"
+    FooterIcon: "{bot-pfp}"
+  Connected:
+    Title: \📞 Connected
+    Description: Connected to the voice channel
+    Color: "#43fc32"
+    Timestamp: true
+    Footer: "{bot-username}"
+    FooterIcon: "{bot-pfp}"
+  Disconnected:
+    Title: ⏹️ Disconnected
+    Description: Disconnected from the voice channel
+    Color: "#f52c2c"
+    Timestamp: true
+    Footer: "{bot-username}"
+    FooterIcon: "{bot-pfp}"
+  Paused:
+    Title: ⏸️ Music Paused
+    Description: The song has been paused
+    Color: "#fca232"
+    Timestamp: true
+    Footer: "{bot-username}"
+    FooterIcon: "{bot-pfp}"
+  Resumed:
+    Title: ▶️ Music Resumed
+    Description: The song has been resumed
+    Color: "#43fc32"
+    Timestamp: true
+    Footer: "{bot-username}"
+    FooterIcon: "{bot-pfp}"
+  Skipped:
+    Title: ⏭️ Song Skipped
+    Description: The song has been skipped
+    Timestamp: true
+    Footer: "{bot-username}"
+    FooterIcon: "{bot-pfp}"
+  Error:
+    Author: Uh oh!
+    Title: "{error-message}"
+    Color: "#f52c2c"
+    Timestamp: true
+  ErrorWithUsage:
+    Author: Uh oh!
+    Title: "{error-message}"
+    Description: "**Usage:** `{usage}`"
+    Color: "#f52c2c"
+    Timestamp: true

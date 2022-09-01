@@ -1,0 +1,67 @@
+LogsChannel: "logs"
+CooldownBypass: "Admin"
+Buttons:
+  - ID: "test_button"
+    Label: "Example Button"
+    Emoji:
+      Enabled: true
+      Emoji: "👍"
+    Style: "success"
+    URL: false # if you want a link, put the link and change the Style setting to link
+    Permissions:
+      Roles: 
+        - "Admin"
+      Message:
+        Ephemeral: true
+        Content:
+          Color: "#f52c2c"
+          Title: "You do not have permission to use this button!"
+    Cooldown:
+      Amount: 10 # Time in seconds
+      Message:
+        Ephemeral: false
+        DeleteAfter: 5
+        Content:
+          Color: "#fcba03"
+          Title: "You must wait {time} before using the button again"
+    Actions:
+      - Action: "add"
+        Type: "role"
+        Value: "MVP"
+      - Action: "add"
+        Type: "coins"
+        Value: 50
+      - Action: "add"
+        Type: "xp"
+        Value: 50
+      - Action: "remove"
+        Type: "role"
+        Value: "VIP"
+      - Action: "remove"
+        Type: "coins"
+        Value: 10
+      - Action: "remove"
+        Type: "xp"
+        Value: 10
+      - Action: "send"
+        Type: "reply"
+        Ephemeral: true
+        Value: 
+          Title: "This is a test reply"
+      - Action: "send"
+        Type: "message"
+        Channel: "notes"
+        Value:
+          Content: "Test message"
+      - Action: "send"
+        Type: "message"
+        DeleteAfter: 10
+        Value: 
+          Title: "This is a test response"
+          Components:
+            - [ "custombutton_test_2" ]
+  - ID: "test_2"
+    Style: 1
+    Label: "Button"
+    Emoji:
+      Enabled: false

@@ -1,0 +1,531 @@
+Embeds:
+  Welcome:
+    Title: "Welcome"
+    Description: "Welcome to the Discord server, {user-mention}! \n\n Invited By: {inviter-mention}\nTotal Members: {total}"
+    Timestamp: true
+    Thumbnail: "{user-pfp}"
+  Leave:
+    Title: "Goodbye"
+    Description: "Goodbye, {user-mention}! It was fun having you around... \n\n Total Members: {total}"
+    Timestamp: true
+    Thumbnail: "{user-pfp}"
+  Shop:
+    Title: "🛍️ Server Shop (Page {current-page}/{max-pages})"
+    Description: "Welcome to the server shop! You can purchase items from the shop by running the command `-buy <item>`."
+    Format: ["{item-display}", "{item-description}"]
+  CoinTop:
+    Title: "👑 Coin Leaderboard (Page {current-page}/{max-pages})"
+    Footer: "Total Coins Collected: {totalcoins}"
+  LevelTop:
+    Title: "✨ Level Leaderboard (Page {current-page}/{max-pages})"
+    Footer: "Total XP Collected: {totalxp}"
+  Ticket:
+    Title: "🎟️ Ticket"
+    Description: "Hello, {user-mention}. Thank you for contacting our support team. We will be ready to assist you as soon as possible. In the meantime, please describe your issues with as much detail as possible."
+    Footer: "Ticket System"
+    Timestamp: true
+    Thumbnail: "{bot-pfp}"
+    Fields:
+      - Name: "Reason"
+        Value: "{reason}"
+  Announcement:
+    Title: "📢 {title}"
+    Description: "{description}"
+    Footer: "Announcement By: {user-tag}"
+    Timestamp: true
+    FooterIcon: "{user-pfp}"
+    AuthorIcon: "{bot-pfp}"
+  Update:
+    Title: "📰 Update {update-version}"
+    Description: "{update}"
+    Timestamp: true
+    Footer: "By: {user-tag}"
+    FooterIcon: "{user-pfp}"
+  Poll:
+    Title: "📊 Poll | {question}"
+    Description: "{description}"
+    Timestamp: true
+  Links:
+    Title: "🔗 Links"
+    Description: "All links related to the server"
+  SuggestionSent:
+    Title: "📬 Suggestion Sent"
+    Description: "Thanks for the suggestion! If you'd like to delete it, react to the [suggestion]({link}) with 🗑️"
+    Timestamp: true
+    Color: "#25de1f"
+  PendingSuggestion:
+    Title: "Suggestion #{id}"
+    Fields:
+      - Name: "Suggestion"
+        Value: "{suggestion}"
+        Inline: true
+      - name: "\u200b"
+        value: "\u200b"
+        inline: true
+      - Name: "From"
+        Value: "{user-mention}"
+        Inline: true
+    Thumbnail: "{user-pfp}"
+    Timestamp: true
+  Suggestion:
+    Title: "Suggestion #{id} | {status}"
+    Fields:
+      - Name: "Suggestion"
+        Value: "{suggestion}"
+        Inline: true
+      - name: "\u200b"
+        value: "\u200b"
+        inline: true
+      - Name: "From"
+        Value: "{user-mention}"
+        Inline: true
+      - Name: "Reason {status}"
+        Value: "{reason}"
+        Inline: true
+      - name: "\u200b"
+        value: "\u200b"
+        inline: true
+      - Name: "Votes"
+        Value: "**Upvotes:** {upvotes-amount} ({upvotes-percentage})\n**Downvotes:** {downvotes-amount} ({downvotes-percentage})\n**Total:** {opinions}"
+        Inline: true
+    Footer: "Changed to {status} by: {changed-by-tag}"
+    Thumbnail: "{user-pfp}"
+    Timestamp: true
+  IP:
+    Author: "Server IP"
+    Description: "Our Minecraft server's IP is **play.example.com**. Feel free to join!"
+    AuthorIcon: "https://pscube.com/wp-content/uploads/2017/06/24-1024x1024.jpg"
+  ApplicationCreated:
+    Title: "Application"
+    Description: "{user-mention}, thank you for creating an application. Fill out these questions and our team will review your application as soon as possible."
+  ApplicationPosition:
+    Title: "Position"
+    Description: "What position would you like to apply for? The current positions are {positions}"
+  ApplicationComplete:
+    Title: "Application Complete"
+    Description: "Your application is complete. A staff member will look over it and make a decision as soon as possible."
+  BugReported:
+    Title: "🐛 Bug Reported"
+    Description: "Thanks for reporting the bug! Our developers will look into the issue as soon as posible."
+    Timestamp: true
+  PendingBugreport:
+    Title: "Bug Report | Pending Approval"
+    Fields:
+      - Name: "Bug"
+        Value: "{bug}"
+        Inline: true
+      - Name: "From"
+        Value: "{user-mention}"
+        Inline: true
+    Thumbnail: "{user-pfp}"
+    Timestamp: true
+  Bugreport:
+    Title: "Bug Report | {status}"
+    Fields:
+      - Name: "Bug"
+        Value: "{bug}"
+        Inline: true
+      - name: "\u200b"
+        value: "\u200b"
+        inline: true
+      - Name: "From"
+        Value: "{user-mention}"
+        Inline: true
+      - Name: "Reason"
+        Value: "{reason}"
+        Inline: true
+      - name: "\u200b"
+        value: "\u200b"
+        inline: true
+    Footer: "Changed to {status} by: {changed-by-tag}"
+    Thumbnail: "{user-pfp}"
+    Timestamp: true
+  Ping:
+    - Title: ":signal_strength: Bot Ping"
+      Fields:
+        - name: "API Latency"
+          value: "{api-ping} ms"
+      Timestamp: true
+    - Title: ":signal_strength: Bot Ping"
+      Fields:
+        - name: "API Latency"
+          value: "{api-ping} ms"
+          inline: true
+        - name: "Bot Latency"
+          value: "{bot-ping} ms"
+          inline: true
+      Timestamp: true
+  CategorizedHelp:
+    Footer: "{bot-displayname}"
+    FooterIcon: "{bot-pfp}"
+    Timestamp: true
+    Description: "Use `-help command <command name>` to search up a specific command"
+    Fields:
+      - name: ":earth_americas: General"
+        value: "{prefix}help module general"
+        inline: true
+      - name: "\u200b"
+        value: "\u200b"
+        inline: true
+      - name: ":tickets: Tickets"
+        value: "{prefix}help module tickets"
+        inline: true
+      - name: ":coin: Coins"
+        value: "{prefix}help module coins"
+        inline: true
+      - name: "\u200b"
+        value: "\u200b"
+        inline: true
+      - name: ":sparkles: XP"
+        value: "{prefix}help module xp"
+        inline: true
+      - name: ":pick: Minecraft"
+        value: "{prefix}help module minecraft"
+        inline: true
+      - name: "\u200b"
+        value: "\u200b"
+        inline: true
+      - name: ":video_game: Fun"
+        value: "{prefix}help module fun"
+        inline: true
+      - name: ":musical_note: Music"
+        value: "{prefix}help module music"
+        inline: true
+      - name: "\u200b"
+        value: "\u200b"
+        inline: true
+      - name: ":dividers: Other"
+        value: "{prefix}help module other"
+        inline: true
+  CategorizedStaffHelp:
+    Footer: "{bot-displayname}"
+    FooterIcon: "{bot-pfp}"
+    Timestamp: true
+    Description: "Use `-shelp command <command name>` to search up a specific command"
+    Fields:
+      - name: ":cop: Moderation"
+        value: "{prefix}staffhelp module moderation"
+        inline: true
+      - name: "\u200b"
+        value: "\u200b"
+        inline: true
+      - name: ":tools: Admin"
+        value: "{prefix}staffhelp module admin"
+        inline: true
+      - name: ":tada: Giveaways"
+        value: "{prefix}staffhelp module giveaways"
+        inline: true
+      - name: "\u200b"
+        value: "\u200b"
+        inline: true
+      - name: ":desktop: Management"
+        value: "{prefix}staffhelp module management"
+        inline: true
+  LevelUp:
+    Title: "⬆️ Level Up"
+    Description: "{user-mention}, you just leveled up! You are now level **{level}**! {reward}"
+  DMWelcome:
+    Description: "Welcome to the server!"
+  Banned:
+    Title: "Banned"
+    Description: "You were banned from the **{server-name}** guild!"
+    Timestamp: true
+    Color: "#f52c2c"
+    Fields:
+      - Name: "Banned By"
+        Value: "{executor-mention} ({executor-tag})"
+      - Name: "Reason"
+        Value: "{reason}"
+  UserBanned:
+    Title: ":anger: User Banned"
+    Description: "{user-mention} ({user-id}) has been banned by {executor-mention} for `{reason}`"
+    Color: "#f52c2c"
+    Timestamp: true
+  Kicked:
+    Title: "Kicked"
+    Description: "You were kicked from the **{server-name}** guild!"
+    Timestamp: true
+    Color: "#f52c2c"
+    Fields:
+      - Name: "Kicked By"
+        Value: "{executor-mention} ({executor-tag})"
+      - Name: "Reason"
+        Value: "{reason}"
+  UserKicked:
+    Title: "👞 User Kicked"
+    Description: "{user-mention} has been kicked by {executor-mention} for `{reason}`"
+    Color: "#fc9803"
+    Timestamp: true
+  Muted:
+    Title: "Muted"
+    Description: "You were muted in the **{server-name}** guild!"
+    Timestamp: true
+    Color: "#f52c2c"
+    Fields:
+      - Name: "Muted By"
+        Value: "{executor-mention} ({executor-tag})"
+      - Name: "Reason"
+        Value: "{reason}"
+  UserMuted:
+    Title: "🔇 User Muted"
+    Description: "{user-mention} has been muted by {executor-mention} for `{reason}`"
+    Color: "#1c1c1c"
+    Timestamp: true
+  Tempbanned:
+    Title: "Temp Banned"
+    Description: "You were temporarily banned from the **{server-name}** guild!"
+    Timestamp: true
+    Color: "#f52c2c"
+    Fields:
+      - Name: "Banned By"
+        Value: "{executor-mention} ({executor-tag})"
+      - Name: "Reason"
+        Value: "{reason}"
+      - Name: "End Date"
+        Value: "<t:{timestamp}:f> (<t:{timestamp}:R>)"
+  UserTempbanned:
+    Title: ":anger: User Temporarily Banned"
+    Description: "{user-mention} ({user-id}) has been temporarily banned by {executor-mention} for `{reason}` until <t:{timestamp}:f> (<t:{timestamp}:R>)"
+    Color: "#f52c2c"
+    Timestamp: true
+  Tempmuted:
+    Title: "Temp Muted"
+    Description: "You were temporarily muted in the **{server-name}** guild!"
+    Timestamp: true
+    Color: "#f52c2c"
+    Fields:
+      - Name: "Muted By"
+        Value: "{executor-mention} ({executor-tag})"
+      - Name: "Reason"
+        Value: "{reason}"
+      - Name: "End Date"
+        Value: "<t:{timestamp}:f> (<t:{timestamp}:R>)"
+  UserTempmuted:
+    Title: "🔇 User Temporarily Muted"
+    Description: "{user-mention} has been temporarily muted by {executor-mention} for `{reason}` until <t:{timestamp}:f> (<t:{timestamp}:R>)"
+    Color: "#1c1c1c"
+    Timestamp: true
+  Blacklisted:
+    Title: "Blacklisted"
+    Description: "You were blacklisted from running a command in the **{server-name}** guild!"
+    Timestamp: true
+    Color: "#f52c2c"
+    Fields:
+      - Name: "Command"
+        Value: "{command}"
+      - Name: "Blacklisted By"
+        Value: "{executor-mention} ({executor-tag})"
+  UserBlacklisted:
+    All:
+      Title: "🛑 User Blacklisted"
+      Description: "{user-mention} is now blacklisted from running **all** commands"
+      Timestamp: true
+      Color: "#f52c2c"
+    Command:
+      Title: "🛑 User Blacklisted"
+      Description: "{user-mention} is now blacklisted from running the `{command}` command"
+      Timestamp: true
+      Color: "#f52c2c"
+  UserUnbanned:
+    Title: "☑️ User Unbanned"
+    Description: "{user-mention} ({user-id}) has been unbanned by {executor-mention}"
+    Timestamp: true
+  Unblacklisted:
+    Title: "Unblacklisted"
+    Description: "You were unblacklisted from running a command in the **{server-name}** guild!"
+    Timestamp: true
+    Color: "#25de1f"
+    Fields:
+      - Name: "Command"
+        Value: "{command}"
+      - Name: "Unblacklisted By"
+        Value: "{executor-mention} ({executor-tag})"
+  Unmuted:
+    Title: "Unmuted"
+    Description: "You were unmuted in the **{server-name}** guild!"
+    Timestamp: true
+    Color: "#25de1f"
+    Fields:
+      - Name: "Unmuted By"
+        Value: "{executor-mention} ({executor-tag})"
+  UserUnmuted:
+    Title: "🔊 User Unmuted"
+    Description: "{user-mention} has been unmuted by {executor-mention}"
+    Timestamp: true
+  Warned:
+    Title: "⚠️Uh oh! You've been warned!"
+    Description: "You were warned in the **{server-name}** guild!"
+    Timestamp: true
+    Color: "#fc9803"
+    Fields:
+      - Name: "Reason"
+        Value: "{reason}"
+      - Name: "Warned By"
+        Value: "{executor-mention} ({executor-tag})"
+      - Name: "Warning ID"
+        Value: "{warning-id}"
+      - Name: "Warning Count"
+        Value: "{warning-count}"
+  UserWarned:
+    Title: "⚠️ User Warned"
+    Description: "{user-mention} has been warned by {executor-mention} for `{reason}`"
+    Color: "#fc9803"
+    Timestamp: true
+  UserAutoPunished:
+    Title: "❗ Too Many Warnings"
+    Description: "{user-mention} has reached **{warning-count} warnings**, so they have been automatically {punishment} {extra}"
+    TempPunishExtraInfo: "({length})"
+  Giveaway:
+    Title: ":gift: Giveaway"
+    Description: "{description}"
+    Fields:
+      - Name: "Prize"
+        Value: "{prize}"
+        Inline: true
+      - Name: "\u200b"
+        Value: "\u200b"
+        Inline: true
+      - Name: "Winners"
+        Value: "{winners}"
+        Inline: true
+      - Name: "Hosted By"
+        Value: "{host}"
+        Inline: true
+      - Name: "\u200b"
+        Value: "\u200b"
+        Inline: true
+      - Name: "Giveaway Ends"
+        Value: "{time-left}"
+        Inline: true
+      - Name: "\u200b"
+        Value: "**React with the :tada: emoji to join!**\n\n{extra-entries}"
+        Inline: false
+    Footer: "Ends"
+    Timestamp: true
+  GiveawayWithRequirements:
+    Title: ":gift: Giveaway"
+    Description: "{description}"
+    Fields:
+      - Name: "Prize"
+        Value: "{prize}"
+        Inline: true
+      - Name: "\u200b"
+        Value: "\u200b"
+        Inline: true
+      - Name: "Winners"
+        Value: "{winners}"
+        Inline: true
+      - Name: "Hosted By"
+        Value: "{host}"
+        Inline: true
+      - Name: "\u200b"
+        Value: "\u200b"
+        Inline: true
+      - Name: "Giveaway Ends"
+        Value: "{time-left}"
+        Inline: true
+      - Name: "Requirements"
+        Value: |-
+          {requirements-coins}{requirements-xp}{requirements-level}{requirements-server}{requirements-roles-cant-have}{requirements-roles-must-have}{requirements-messages}
+
+          **React with the :tada: emoji to join!**
+
+          {extra-entries}
+        Inline: false
+    Footer: "Ends"
+    Timestamp: true
+  GiveawayEnded:
+    Title: ":gift: Giveaway Ended"
+    Fields:
+      - Name: "Prize⠀⠀⠀⠀⠀"
+        Value: "{prize}\n{description}"
+        Inline: true
+      - Name: "Hosted By⠀⠀⠀⠀⠀"
+        Value: "{host}"
+        Inline: true
+      - Name: "Winners"
+        Value: "{winners}"
+        Inline: true
+      - Name: "\u200b"
+        Value: ":tada: **Create a ticket to claim your prize!**"
+        Inline: false
+    Timestamp: true
+    Footer: "Ended"
+  Reminder:
+    Title: "⏰ Remind"
+    Description: "Hey {user-mention}, don't forget this!"
+    Fields:
+      - Name: "🗒️ Your Reminder:"
+        Value: "{reminder}"
+    Timestamp: true
+  JoinVoiceChannel:
+    Title: User Joined Channel
+    Fields:
+      - name: Channel
+        value: "{channel-name} ({channel-id})"
+      - name: User
+        value: "{user-mention} ({user-id})"
+      - name: User Tag
+        value: "{user-tag}"
+      - name: Time
+        value: "{time}"
+    Timestamp: true
+    Thumbnail: "{user-pfp}"
+  LeaveVoiceChannel:
+    Title: User Left Channel
+    Fields:
+      - name: Channel
+        value: "{channel-name} ({channel-id})"
+      - name: User
+        value: "{user-mention} ({user-id})"
+      - name: User Tag
+        value: "{user-tag}"
+      - name: Time
+        value: "{time}"
+    Timestamp: true
+    Thumbnail: "{user-pfp}"
+  SwitchVoiceChannel:
+    Title: User Switched Channel
+    Fields:
+      - name: Old Channel
+        value: "{old-channel-name} ({old-channel-id})"
+      - name: New Channel
+        value: "{new-channel-name} ({new-channel-id})"
+      - name: User
+        value: "{user-mention} ({user-id})"
+      - name: User Tag
+        value: "{user-tag}"
+      - name: Time
+        value: "{time}"
+    Timestamp: true
+    Thumbnail: "{user-pfp}"
+  TestEmbed:
+    Title: "This is a test embed for the buttons.yml"
+    Components:
+      - [ "custombutton_test_button" ]
+  Msgtop:
+    Title: "📩 Messages Sent Leaderboard (Page {current-page}/{max-pages})"
+    Footer: "Total Messages Sent: {total_messages}"
+  VCtop:
+    Title: "🔊 Voice Time Leaderboard (Page {current-page}/{max-pages})"
+    Footer: "Total Time Spent in VC: {total_time}"
+  Uptime:
+    Title: "Bot Uptime"
+    Description: "The bot has been online for **{uptime}**"
+    Timestamp: true
+    Footer: "Corebot"
+    FooterIcon: "{bot-pfp}"
+  TicketStats:
+    Author: "{user-displayname}"
+    AuthorIcon: "{user-pfp}"
+    Title: "Ticket Stats"
+    Fields:
+      - Name: "All Time"
+        Value: "> **Messages:** {all-msgs}\n> **Tickets:** {all-tickets}\n> **Closes:** {all-closes}"
+      - Name: "Past 30 Days"
+        Value: "> **Messages:** {month-msgs}\n> **Tickets:** {month-tickets}\n> **Closes:** {month-closes}"
+      - Name: "Past 7 Days"
+        Value: "> **Messages:** {week-msgs}\n> **Tickets:** {week-tickets}\n> **Closes:** {week-closes}"
+      - Name: "Past 24 Hours"
+        Value: "> **Messages:** {day-msgs}\n> **Tickets:** {day-tickets}\n> **Closes:** {day-closes}"
+    Timestamp: true

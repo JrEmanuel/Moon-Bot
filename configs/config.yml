@@ -1,0 +1,1169 @@
+########################################
+#                                      #
+#            COREBOT CONFIG            #
+#                                      #
+########################################
+
+Token: "BOT-TOKEN-HERE"
+Key: "DIRECTLEAKS"
+Prefix: "-"
+
+########################################
+#                                      #
+#             EMBED COLORS             #
+#                                      #
+########################################
+
+EmbedColors:
+    Default: "#0390fc"
+    Error: "#f52c2c"
+    Success: "#25de1f"
+
+########################################
+#                                      #
+#               DATABASE               #
+#                                      #
+########################################
+
+Storage:
+    Type: "sqlite"
+
+    MySQL:
+        Host: ""
+        Port: ""
+        Database: ""
+        User: ""
+        Password: ""
+
+########################################
+#                                      #
+#              JOIN EVENT              #
+#                                      #
+########################################
+
+Join:
+    Roles:
+        - "Member"
+
+    Messages:
+        Enabled: true
+        Channel: "welcome"
+        DM:
+            Enabled: false
+
+    InviteRewards:
+        Enabled: true
+        Roles:
+            1: "Inviter"
+            5: "Inviter+"
+
+########################################
+#                                      #
+#             LEAVE EVENT              #
+#                                      #
+########################################
+
+Leave:
+    Messages:
+        Enabled: true
+        Channel: "welcome"
+
+    Data:
+        # true - data will be kept
+        # false - data will be deleted
+        Coins: true
+        Levels: true
+        Punishments: true
+        Roles:
+            Enabled: true
+            BlacklistedRoles:
+                - "Owner"
+                - "Admin"
+                - "Helper"
+                - "Staff"
+
+########################################
+#                                      #
+#              COINS MODULE            #
+#                                      #
+########################################
+
+Coins:
+    Amounts:
+        PerMessage: 10
+        Daily: 1000
+        MaxGamble: 1000000
+        Weekly: 2500
+
+    Work:
+        Cooldown: 12
+        Jobs:
+            - Name: "McDonalds"
+              DisplayName: "🍔 McDonalds"
+              Tiers:
+                  - Name: "Janitor"
+                    HourlyPay: 15
+                    Requirements: false
+                  - Name: "Cashier"
+                    HourlyPay: 20
+                    Requirements:
+                        TimesWorked: 4
+                        Level: 3
+                  - Name: "Cook"
+                    HourlyPay: 27
+                    Requirements:
+                        TimesWorked: 8
+                        Coins: 4000
+                  - Name: "Manager"
+                    HourlyPay: 34
+                    Requirements:
+                        TimesWorked: 12
+            - Name: "Starbucks"
+              DisplayName: "🍵 Starbucks"
+              Tiers:
+                  - Name: "Cashier"
+                    HourlyPay: 17
+                    Requirements: false
+                  - Name: "Barista"
+                    HourlyPay: 25
+                    Requirements:
+                        TimesWorked: 5
+                  - Name: "Manager"
+                    HourlyPay: 35
+                    Requirements:
+                        TimesWorked: 10
+            - Name: "YouTuber"
+              DisplayName: "📹 YouTuber"
+              Tiers:
+                  - Name: "1k Subs YouTuber"
+                    HourlyPay: 13
+                    Requirements: false
+                  - Name: "10k Subs YouTuber"
+                    HourlyPay: 30
+                    Requirements:
+                        Level: 5
+                        TimesWorked: 7
+                  - Name: "100k Subs YouTuber"
+                    HourlyPay: 70
+                    Requirements:
+                        Level: 5
+                        TimesWorked: 12
+            - Name: "Doctor"
+              DisplayName: "👨‍⚕️ Doctor"
+              Tiers:
+                  - Name: "Nursing Assistant"
+                    HourlyPay: 30
+                    Requirements:
+                        Level: 5
+                        TimesWorked: 5
+                  - Name: "Nurse"
+                    HourlyPay: 45
+                    Requirements:
+                        Level: 7
+                        TimesWorked: 10
+                  - Name: "Doctor"
+                    HourlyPay: 80
+                    Requirements:
+                        Level: 10
+                        TimesWorked: 15
+
+    Shop:
+        Enabled: true
+        Items:
+            - Name: "vip"
+              Display: "VIP RANK"
+              Role: "VIP"
+              Price: 3500
+              Description: "Cost: **3500** coins\nMultiplier: 2x\nPurchase by running the command `-buy vip`"
+            - Name: "mvp"
+              Display: "MVP RANK"
+              Role: "MVP"
+              Price: 5000
+              Description: "Cost: **5000** coins\nMultiplier: 2.5x\nPurchase by running the command `-buy mvp`"
+              Requirements:
+                  Role: "VIP"
+            - Name: "mvp+"
+              Display: "MVP+ RANK"
+              Role: "MVP+"
+              Price: 7000
+              Description: "Cost: **7000** coins\nMultiplier: 3x\nPurchase by running the command `-buy mvp+`"
+              Requirements:
+                  Role: "MVP"
+                  Level: 5
+        ItemsPerPage: 5
+
+    Multipliers:
+        Enabled: false
+        Roles:
+            "VIP": 2
+            "MVP": 2.5
+            "MVP+": 3
+        Multiplies:
+            Daily: true
+            Work: true
+            PerMessage: true
+            Slots: true
+
+    Slots:
+        ":lemon:":
+            Chance: 35
+            Coins: 0.023
+        ":skull:":
+            Chance: 5
+            Coins: 0.92
+        ":heart:":
+            Chance: 35
+            Coins: 0.023
+        ":large_blue_diamond:":
+            Chance: 25
+            Coins: 0.21
+
+    Restrictions:
+        Type: "blacklist" # blacklist or whitelist
+        Channels:
+            - "bot-commands"
+        Roles: []
+
+########################################
+#                                      #
+#            LEVEL/XP MODULE           #
+#                                      #
+########################################
+
+Levels:
+    Amounts:
+        PerMessage: 10
+
+    LevelUp:
+        Notification: true
+        Channel: "current"
+        Delete: true
+
+    LevelRoles:
+        Enabled: true
+        RemovePrevious: true
+        LevelsToRoles:
+            5: "Level 5"
+            10: "Level 10"
+            #15: "Level 15"
+    
+    CoinRewards:
+        Enabled: true
+        LevelsToCoins:
+            5: 500
+            10: 1000
+            # (level): (coins rewarded)
+
+    Restrictions:
+        Type: "blacklist" # blacklist or whitelist
+        Channels:
+            - "bot-commands"
+        Roles: []
+
+########################################
+#                                      #
+#            TICKETS MODULE            #
+#                                      #
+########################################
+
+Tickets:
+    LimitPerUser: 5
+    RequireReason: false
+    PingSupport: true
+    PingUser: true
+    DMClosureReason: false
+    CloseConfirmation: false
+    CloseAllConfirmation: true
+    SupportRole: "Support Team"
+    TicketCreatedMessage:
+        Enabled: true
+        AutoDelete: false # false or a number of seconds to wait before deleting
+        Private: false # Only for slash commands
+
+    Channel:
+        Category: "Tickets"
+        Topic: "**User** {user-tag} **Reason** {reason} **Time** {time} **ID** {id}"
+
+    Logs:
+        Enabled: true
+        Channel: "logs"
+
+    Transcripts:
+        Enabled: true
+        Channel: "transcripts"
+        DMToUser: true
+
+    ReactForTicket:
+        Button:
+            Style: "PRIMARY"
+            Label: "Create A Ticket"
+            Emoji: 
+                Enabled: true
+                Emoji: "🎟️"
+        Message:
+            Title: "🎟️ Create A Ticket"
+            Description: "Need support? Click the button to create a ticket!"
+            Footer: "{bot-displayname}"
+            FooterIcon: "{bot-pfp}"
+
+########################################
+#                                      #
+#         ADVERTISEMENT SYSTEM         #
+#                                      #
+########################################
+
+AntiAdvertisement:
+    Chat:
+        Enabled: true
+        Logs:
+            Enabled: true
+            Channel: "logs"
+
+    Status:
+        Enabled: false
+        Channel: "logs"
+
+    Whitelist:
+        Websites:
+            - "google.com"
+        Channels:
+            - "advertisements"
+
+    BypassRole: "Staff"
+
+########################################
+#                                      #
+#         VERIFICATION SYSTEM          #
+#                                      #
+########################################
+
+Verification:
+    Enabled: false
+    VerifiedRoles:
+        - "Verified"
+    Type: "button"
+    # "reaction", "code", or "button"
+    WelcomeMessage: "after-verified"
+    # "on-join" or "after-verified"
+    Channel: "verify"
+    # The channel the verification message will be in and users will use to verify
+
+    # Use the -verification command to set up the appropriate message in the set verification channel
+    Reaction:
+        Emoji: "✅"
+        Message:
+            Title: "✅ Server Verification"
+            Description: "Before you can view the rest of the server, you must prove that you are not a bot account. To do so, simply react to the ✅ on this message"
+            Color: "#3ba55d"
+
+    Code:
+        Length: 10
+        Message:
+            Title: "✅ Server Verification"
+            Description: "Before you can view the rest of the server, you must prove that you are not a bot account. To do so, run the `-verify` command in this channel and follow the instructions sent to your DMs."
+            Color: "#3ba55d"
+
+    Button:
+        Emoji: "✅"
+        Label: "Verify"
+        Style: "SUCCESS"
+        Message:
+            Title: "✅ Server Verification"
+            Description: "Before you can view the rest of the server, you must prove that you are not a bot account. To do so, simply click the button attached to this message"
+            Color: "#3ba55d"
+
+########################################
+#                                      #
+#         AUTO RESPONSE SYSTEM         #
+#                                      #
+########################################
+
+AutoResponse:
+    Enabled: true
+    Responses:
+        - Text: "Test auto response"
+          Content: "This is a response!"
+
+        - Text: "Auto response #2!"
+          DM: true
+          Type: "text"
+          Content: "This is a DM auto response"
+          AfterDM:
+              Fail: "Your DMs are locked."
+              Success: "A message has been sent to your DMs!"
+
+        - Text: "-disabled-command"
+          Delete: true
+          DeleteResponse: 2
+          Type: "embed"
+          Embed:
+              Title: "Command Disabled"
+              Description: "Sorry, this command is disabled"
+              Thumbnail: "{bot-pfp}"
+
+########################################
+#                                      #
+#          TEMP CHANNEL SYSTEM         #
+#                                      #
+########################################
+
+TempChannels:
+    Enabled: true
+    VoiceChannel: "Temp Channel"
+    Category: "Temp Channels"
+    ChannelNameFormat: "{user-username}"
+    ChannelLockBypassRoles: []
+    DefaultBitrate: 64
+    IgnoreBotsWhenDeleting: true
+
+########################################
+#                                      #
+#          SUGGESTIONS SYSTEM          #
+#                                      #
+########################################
+
+Suggestions:
+    Enabled: true
+    ReactToOwnSuggestion: false
+    ManageSuggestionsRole: 
+        - "Owner"
+    Type: "send-command"
+    # Types: "send-command", "send-message", "both"
+    AddManagementReactions: false
+    NotifyUserOnStatusChange: true
+
+    Emojis:
+        Upvote: "✅"
+        Downvote: "❌"
+        Accepted: "⭐"
+        Denied: "🔒"
+        Reset: "⚫"
+        Implemented: "🛠️"
+        Delete: "🗑️"
+
+    Channels:
+        Suggestions: "suggestions"
+        Accepted: "suggestions"
+        Denied: "suggestions"
+        Implemented: "suggestions"
+
+    Colors:
+        Pending: "#0390fc"
+        Accepted: "#fc9803"
+        Denied: "#f52c2c"
+        Implemented: "#25de1f"
+
+    Statuses:
+        Pending: Pending
+        Accepted: Accepted
+        Denied: Denied
+        Implemented: Implemented
+
+    Notes:
+        Account:
+            Username: "{user-displayname}"
+            Avatar: "{user-pfp}"
+
+        Message:
+            Type: "text"
+            # Types: "text" or "embed"
+
+            Text: "{note}"
+            # Only works if type is "text"
+
+            Embed: # Only works if type is "embed"
+                Title: "Suggestion Note"
+                Description: "{note}\n\n> **Note By:** {user-mention}"
+                Timestamp: true
+                Color: "#8d83fc"
+
+########################################
+#                                      #
+#          BUG REPORTS SYSTEM          #
+#                                      #
+########################################
+
+BugReports:
+    Enabled: true
+    ManageBugReportsRole: 
+        - "Owner"
+    Type: "send-command"
+    # Types: "send-command", "send-message", "both"
+    AddManagementReactions: true
+    NotifyUserOnStatusChange: true
+
+    Emojis:
+        Accepted: "✅"
+        Denied: "❌"
+        Fixed: "🛠️"
+        Reset: "⚫"
+
+    Channels:
+        Pending: "bug-reports"
+        Accepted: "bug-reports"
+        Denied: "bug-reports"
+        Fixed: "bug-reports"
+
+    Colors:
+        Pending: "#fc9803"
+        Accepted: "#fc9803"
+        Denied: "#f52c2c"
+        Fixed: "#25de1f"
+
+    Statuses:
+        Pending: Pending
+        Accepted: Accepted
+        Denied: Denied
+        Fixed: Fixed
+
+    Notes:
+        Account:
+            Username: "{user-displayname}"
+            Avatar: "{user-pfp}"
+
+        Message:
+            Type: "text"
+            # Types: "text" or "embed"
+
+            Text: "{note}"
+            # Only works if type is "text"
+
+            Embed: # Only works if type is "embed"
+                Title: "Bug Report Note"
+                Description: "{note}\n\n> **Note By:** {user-mention}"
+                Timestamp: true
+                Color: "#8d83fc"
+
+########################################
+#                                      #
+#        APPLICATION SYSTEM            #
+#                                      #
+########################################
+
+Applications:
+    Reviewers: 
+        - "Owner"
+        - "Admin"
+    MentionReviewerRole: false
+    AddRoleWhenAccepted: true
+    DeleteEmbedsAndSendAnswers: true
+    DMDecision: true
+    LimitPerUser: 2
+
+    Channel:
+        Format: "application-{tag}"
+        Topic: "**User:** {user-tag}\n**User ID:** {user-id}\n**Applying for:** {position}\n**Status:** {status}"
+        Category: "Applications"
+
+    Logs:
+        Enabled: true
+        Channel: "logs"
+        PasteSite: "https://paste.corebot.dev"
+
+    Transcripts:
+        Enabled: true
+        Channel: "transcripts"
+        DMToUser: true
+
+    Positions:
+        Support:
+            Role: "Support Team"
+            Reviewers: []
+            Questions:
+                - "What is your name?"
+                - Question: "What is your age range?"
+                  Options:
+                      - "10-14"
+                      - "15-18"
+                      - "20-25"
+                - "Do you have any experience with support?"
+            Button: # button settings are optional for position settings
+                Label: "Apply for Support"
+                Emoji:
+                    Enabled: true
+                    Emoji: 📡
+    
+    ReactForApp:
+        Button:
+            Style: "PRIMARY"
+            Label: "Click to apply"
+            Emoji: 
+                Enabled: true
+                Emoji: "💻"
+        Message:
+            Title: "💻 Create An Application"
+            Description: "Want to apply for staff? Click on the button to create an applicaton!"
+            Footer: "{bot-displayname}"
+            FooterIcon: "{bot-pfp}"
+
+########################################
+#                                      #
+#          MODERATION MODULE           #
+#                                      #
+########################################
+
+Moderation:
+    AreStaffPunishable: false # true, false, or "ignore"
+    MuteRole: "Muted"
+    CommandBlacklistBypass: "Staff"
+    DeleteCommandMessage: false
+    RequireReason: false    
+
+    WarnDecay:
+        Enabled: true
+        Time: 5 # time in minutes warnings will be removed after
+
+    Logs:
+        Enabled: true
+        Channel: "logs"
+
+    AutoWarnPunishments:
+        3: [tempmute, Auto Punish, 10m]
+        5: [tempban, Auto Punish, 3d]
+        8: [ban, Auto Punish]
+        # (warn count): [punishment type, reason, length (required for tempmute and tempban)]
+
+########################################
+#                                      #
+#      AUTO ANNOUNCEMENTS SYSTEM       #
+#                                      #
+########################################
+
+AutoAnnouncements:
+    Enabled: false
+    Announcements:
+        - Channel: "minecraft"
+          Interval: 60 # in seconds
+          Type: "embed" # or "text"
+          Embed:
+              Title: "Join our Minecraft server! The IP is play.example.com"
+        - Channel: "general"
+          Interval: 120
+          Type: "text"
+          Content: "Don't forget to bump the server!"
+          RestartOnBotRestart: true
+
+########################################
+#                                      #
+#       ACTIVITY CYCLING SYSTEM        #
+#                                      #
+########################################
+
+ActivityCycling:
+    Enabled: false
+    Activities:
+        - ["watching", "Tickets: {tickets}"]
+        - ["playing", "Total Users: {users}"]
+        - ["playing", "Total Online Users: {total-online-users}"]
+        - ["watching", "Total Online Humans: {total-online-humans}"]
+        - ["watching", "Total Online Bots: {total-online-bots}"]
+        - ["listening", "Humans: {humans}"]
+        - ["playing", "Bots: {bots}"]
+    Time: 5
+    Type: "ordered"
+    # Types: "ordered" or "random"
+
+########################################
+#                                      #
+#           ANTI TAG SYSTEM            #
+#                                      #
+########################################
+
+AntiTag:
+    Enabled: true
+    TicketsAndApplications: true
+    # Should tags be block in tickets and applications as well?
+    Warning:
+        Enabled: true
+        Reason: "You are not allowed to mention {mentioned}"
+
+    Roles:
+        - "Staff"
+    Users:
+        - "UserID"
+    UsersWithRoles:
+        - "Staff"
+    Bypass: 
+        - "Staff"
+
+    DeleteMessageAfter: 3
+    # How many milliseconds to wait before deleting the message. Set to false to not delete the message
+    Response:
+        DeleteAfter: 3
+        # How many milliseconds to wait before deleting the message. Set to false to not delete the message
+        Embed:
+            Title: "🛑 Anti Tag"
+            Description: "Hey! Please do not mention {role-or-user}"
+            Color: "#f52c2c"
+            Timestamp: true
+
+
+########################################
+#                                      #
+#            LOGGING SYSTEM            #
+#                                      #
+########################################
+
+Logs:
+    Enabled:
+        - "MessageEdited"
+        - "MessageDeleted"
+        - "MessagesDeleted"
+        - "Chat"
+        - "GuildMemberUpdated"
+        - "ChannelCreated"
+        - "ChannelDeleted"
+        - "ChannelPinsUpdated"
+        - "DMs"
+        - "ChannelUpdated"
+        - "EmojiCreated"
+        - "EmojiDeleted"
+        - "EmojiUpdated"
+        - "RoleCreated"
+        - "RoleDeleted"
+        - "RoleUpdated"
+        - "Commands"
+        - "MemberBoosted"
+        - "JoinVoiceChannel"
+        - "LeaveVoiceChannel"
+        - "SwitchVoiceChannel"
+
+    Channels:
+        MessageEdited: "logs"
+        MessageDeleted: "logs"
+        MessageDeleteBulk: "logs"
+        GuildMemberUpdated: "logs"
+        Commands: "logs"
+        ChannelCreated: "logs"
+        ChannelDeleted: "logs"
+        ChannelUpdated: "logs"
+        ChannelPinsUpdated: "logs"
+        EmojiCreated: "logs"
+        EmojiDeleted: "logs"
+        EmojiUpdated: "logs"
+        RoleCreated: "logs"
+        RoleDeleted: "logs"
+        RoleUpdated: "logs"
+        DMs: "logs"
+        MemberBoosted: "logs"
+        JoinVoiceChannel: "logs"
+        LeaveVoiceChannel: "logs"
+        SwitchVoiceChannel: "logs"
+
+    ChannelBlacklist: 
+        - "channel name / id here"
+
+########################################
+#                                      #
+#        SERVER STATUS COMMAND         #
+#                                      #
+########################################
+
+Servers:
+    Hypixel:
+        PingURL: "https://api.minetools.eu/ping/mc.hypixel.net/25565"
+        QueryURL: "https://api.minetools.eu/query/mc.hypixel.net/25565"
+    Example:
+        PingURL: "https://api.minetools.eu/ping/play.example.com/25565"
+        QueryURL: "https://api.minetools.eu/query/play.example.com/25565"
+
+########################################
+#                                      #
+#         LOCK/UNLOCK COMMAND          #
+#                                      #
+########################################
+
+LockUnlock:
+    Whitelisted:
+        - "Owner"
+        - "Admin"
+        - "Mod"
+        - "Helper"
+        - "Staff"
+    Ignore:
+        - "Muted"
+        - "Bot"
+        - "Unverified"
+
+########################################
+#                                      #
+#             LINKS COMMAND            #
+#                                      #
+########################################
+
+Links:
+    Website: "www.example.com"
+    Store: "store.example.com"
+    Twitter: "twitter.com/example"
+
+########################################
+#                                      #
+#   REACTION ROLES/ROLE MENU COMMAND   #
+#                                      #
+########################################
+
+ReactionRoles:
+    - Name: "pings"
+      Type: "button"
+      Options:
+        - Name: "Updates"
+          Emoji: "🇺"
+          Button:
+            Label: "Updates"
+            UseEmoji: true
+            Style: "PRIMARY"
+        - Name: "Polls"
+          Emoji: "🇵"
+          Button:
+            Label: "Polls"
+            UseEmoji: true
+            Style: "PRIMARY"
+        - Name: "Events"
+          Emoji: "🇪"
+          Button:
+            Label: "Events"
+            UseEmoji: true
+            Style: "PRIMARY"
+        - Name: "Giveaways"
+          Emoji: "🎉"
+          Button:
+            Label: "Giveaways"
+            UseEmoji: true
+            Style: "PRIMARY"
+      Message:
+        Title: "Role Menu - Ping Roles"
+        Description: "The corresponding role will be pinged whenever an update, poll, event, or giveaway is made. If you like to be notified when one of these things occur, press the corresponding buttons:\n\n{emojiroles}"
+    - Name: "favoritegame"
+      Type: "menu"
+      OnlyOne: true
+      DMOnAdd: false
+      DMOnRemove: false
+      Options:
+        - Name: "Fortnite"
+          Emoji: "🇫"
+          MenuOption:
+            Label: "Fortnite"
+            Description: "Select if Fortnite is your favorite game!"
+            UseEmoji: true
+        - Name: "Minecraft"
+          Emoji: "⛏️"
+          MenuOption:
+            Label: "Minecraft"
+            Description: "Select if Minecraft is your favorite game!"
+            UseEmoji: true
+      Message:
+        Title: "Role Menu - Favorite Game"
+        Description: "Which game is your favorite? \n\n{emojiroles}"
+    - Name: "Test"
+      Type: "reaction"
+      Options:
+        - Name: "MVP"
+          Emoji: "💙"
+        - Name: "VIP"
+          Emoji: "💜"
+      Message:
+        Title: "Reaction Roles - Test"
+        Description: "Test reaction roles \n\n{emojiroles}"
+
+########################################
+#                                      #
+#              LEADERBOARDS            #
+#                                      #
+########################################
+
+Leaderboards:
+    UsersPerPage:
+        Coins: 15
+        Levels: 15
+        Invites: 15
+        Boosters: 15
+        Messages: 15
+        Voice: 15
+        Games: 15
+    FilterUnknown: true
+
+########################################
+#                                      #
+#              COMMANDS                #
+#                                      #
+########################################
+
+Commands:
+    RemoveCommandMessages: false
+    AllowCommandsInTickets: true
+    ChannelBypassRole: 
+        - "Staff"
+    GainXP: false
+    GainCoins: false
+    InvalidCommandMessage: false
+    AllowBots: false
+
+########################################
+#                                      #
+#              COOLDOWNS               #
+#                                      #
+########################################
+
+Cooldowns:
+    BypassRole: "Staff"
+
+    # All cooldowns are in seconds.
+    Experience: 5
+    Coins: 5
+
+    Commands:
+        report: 120
+        # (Command Name): (Cooldown Time)
+
+########################################
+#                                      #
+#              CHANNELS                #
+#                                      #
+########################################
+
+Channels:
+    Reports: "reports"
+    DefaultVote: "polls"
+    DefaultUpdates: "updates"
+    DefaultAnnouncements: "announcements"
+    ImageLogs: "logs"
+    TranscriptFileLogs: "logs"
+
+########################################
+#                                      #
+#                 HELP                 #
+#                                      #
+########################################
+
+Help:
+    Type: "categorized"
+    # Types: "normal", "categorized", "dm"
+    NormalTitle: "Help Menu"
+    StaffTitle: "Staff Help Menu"
+    SentToDMs: "The bot's commands have been sent to your DMs!"
+    DMsLocked: "An error occured while trying to DM you. Are your DMs locked?"
+
+    Categories:
+        - Emoji: "🌎"
+          Names: 
+              - "general"
+          DisplayNames:
+              - ":earth_americas: General"
+              - "General Commands"
+          Modules:
+              - "general"
+        - Emoji: "🎟️"
+          Names: 
+              - "tickets"
+              - "support"
+          DisplayNames:
+              - ":tickets: Tickets"
+              - "Ticket Commands"
+          Modules:
+              - "tickets"
+        - Emoji: "🪙"
+          Names: 
+              - "coins"
+          DisplayNames:
+              - ":coin: Coins"
+              - "Coin Commands"
+          Modules:
+              - "coins"
+        - Emoji: "✨"
+          Names: 
+              - "xp"
+              - "exp"
+              - "levels"
+              - "experience"
+          DisplayNames:
+              - ":sparkles: XP"
+              - "XP Commands"
+          Modules:
+              - "exp"
+        - Emoji: "🎮"
+          Names: 
+              - "fun"
+              - "games"
+          DisplayNames:
+              - ":video_game: Fun"
+              - "Fun Commands"
+          Modules:
+                - "fun"
+        - Emoji: "⛏️"
+          Names: 
+              - "minecraft"
+              - "mc"
+          DisplayNames:
+              - ":pick: Minecraft"
+              - "Minecraft Commands"
+          Modules:
+              - "minecraft"
+        - Emoji: "🎵"
+          Names: 
+              - "music"
+          DisplayNames:
+              - ":musical_note: Music"
+              - "Music Commands"
+          Modules:
+              - "music"
+        - Emoji: "🗂️"
+          Names:
+            - "other"
+          DisplayNames:
+              - ":dividers: Other"
+              - "Other Commands"
+          Modules:
+              - "other"
+        - Emoji: "👮"
+          Names: 
+              - "mod"
+              - "moderation"
+          DisplayNames:
+              - ":man_police_officer: Moderation"
+              - "Moderation Commands"
+          Staff: true
+          Modules:
+              - "mod"
+              - "staff"
+        - Emoji: "🛠️"
+          Names:
+              - "admin"
+          DisplayNames:
+              - ":tools: Admin"
+              - "Admin Commands"
+          Staff: true
+          Modules:
+              - "admin"
+        - Emoji: "🎉"
+          Names:
+              - "giveaway"
+              - "giveaways"
+          DisplayNames:
+              - ":tada: Giveaways"
+              - "Giveaway Commands"
+          Staff: true
+          Modules:
+              - "giveaways"
+        - Emoji: "🖥️"
+          Names:
+            - "management"
+          DisplayNames:
+              - ":desktop: Management"
+              - "Management Commands"
+          Staff: true
+          Modules:
+              - "management"
+              - "utils"
+    
+    Command:
+        Title: "{name} Command"
+        Fields:
+            - "Description"
+            - "Aliases"
+            - "Usage"
+            - "Type"
+
+########################################
+#                                      #
+#                CARDS                 #
+#                                      #
+########################################
+
+Cards:
+    Welcome:
+        Enabled: true
+        Lines:
+            # Size setting: 
+            # "smallest" - The bot will use the size of the longest line. This setting also requires a StartingSize setting.
+            # "best-fit" - The bot will figure out the best size to fit the text box. This setting also requires a StartingSize setting.
+            # number - The text size will be the number you set it to
+            - Text: "WELCOME {user},"
+              Size: "smallest"
+              StartingSize: 37
+            - Text: "TO {server-uppercase}!"
+              Size: "smallest"
+              StartingSize: 37
+              XOffset: 7
+            - Text: "YOU ARE THE {nth} MEMBER"
+              Size: "smallest"
+              StartingSize: 37
+    Leave:
+        Enabled: true
+        Lines:
+            # Size setting: 
+            # "smallest" - The bot will use the size of the longest line (smallest size). This setting also requires a StartingSize setting.
+            # "best-fit" - The bot will figure out the best size to fit the text box. This setting also requires a StartingSize setting.
+            # number - The text size will be the number you set it to
+            - Text: "GOODBYE {user},"
+              Size: "smallest"
+              StartingSize: 37
+              YOffset: 21
+            - Text: "IT WAS FUN HAVING YOU AROUND!"
+              Size: "smallest"
+              StartingSize: 37
+              XOffset: 7
+              YOffset: 21
+    Level:
+        Enabled: true
+        XPBarColor: "#0390fc"
+        Text:
+            Rank: "RANK #{rank}"
+            Level: "LEVEL {level}"
+            XP: "{total-xp} TOTAL XP"
+
+########################################
+#                                      #
+#          AUTO ROLE PREFIXES          #
+#                                      #
+########################################
+
+RolePrefixes:
+    "Admin": "Admin | {user-username}"
+    "Mod": "Mod | {user-username}"
+    "Helper": "Helper | {user-username}"
+
+########################################
+#                                      #
+#                OTHER                 #
+#                                      #
+########################################
+
+Other:
+    MissingRolesAndChannelsNotification: false
+    PostUpdatesByMessagingInChannel: true
+    PasteSite: "https://paste.corebot.dev"
+    FilterBypassRole: "Staff"
+    DataBackups: true
+    RemindmeAdmin: "Admin"
+    Giveaways:
+        DiscordEmoji: ":tada:"
+        UnicodeEmoji: "🎉"
+        ExtraEntries:
+            "MVP+": 4
+            "MVP": 3
+            "VIP": 2
+        WinnerRole: false
+        # ^ optional setting - If you want a role to be added to giveaway winners, put the role's name instead of false
+    IgnoredGuilds: []
+    MessageCount:
+        IncludeCommands: false
+        Blacklist:
+            Channels: []
+            Roles: []
+    VoiceTime:
+        Ignore:
+            MutedUsers: true
+            DefeanedUsers: true
+        MinUsersInVC: 2
+        Blacklist:
+            Channels: []
+            Roles: []
+    Website:
+        IP: "127.0.0.1"
+        Port: 8080
+    OnBotMention: "send-help"
+    # "send-help" "send-prefix" "send-EmbedName"
+
+
+# Do not change this unless told to do so by a Corebot staff member.
+BotVersion: "4.5.2"
