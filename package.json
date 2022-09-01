@@ -6,8 +6,6 @@
     "scripts": {
         "start": "node . --no-install"
         "dev" : "node path/to/index.js"
-  }
-}
     },
     "engines": {
      "node": "16.17.0"
