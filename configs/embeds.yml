@@ -513,7 +513,7 @@ Embeds:
     Title: "Bot Uptime"
     Description: "The bot has been online for **{uptime}**"
     Timestamp: true
-    Footer: "Corebot"
+    Footer: "SplytMC Network"
     FooterIcon: "{bot-pfp}"
   TicketStats:
     Author: "{user-displayname}"
