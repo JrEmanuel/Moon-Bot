@@ -442,10 +442,10 @@ Suggestions:
         Delete: "🗑️"
 
     Channels:
-        Suggestions: "suggestions"
-        Accepted: "suggestions"
-        Denied: "suggestions"
-        Implemented: "suggestions"
+        Suggestions: "🔎┃sugerencias"
+        Accepted: "🔎┃sugerencias"
+        Denied: "🔎┃sugerencias"
+        Implemented: "🔎┃sugerencias"
 
     Colors:
         Pending: "#0390fc"
@@ -484,7 +484,7 @@ Suggestions:
 ########################################
 
 BugReports:
-    Enabled: true
+    Enabled: false
     ManageBugReportsRole: 
         - "Owner"
     Type: "send-command"
@@ -679,6 +679,7 @@ AntiTag:
 
     Roles:
         - "Staff"
+        - "Owner"
     Users:
         - "UserID"
     UsersWithRoles:
@@ -1121,6 +1122,7 @@ RolePrefixes:
     "Admin": "Admin | {user-username}"
     "Mod": "Mod | {user-username}"
     "Helper": "Helper | {user-username}"
+    *Owner*: "Owner | {user-username}
 
 ########################################
 #                                      #
