@@ -4,7 +4,7 @@
 #                                      #
 ########################################
 
-Token: "BOT-TOKEN-HERE"
+Token: "MTAxNjg5NzgwMzUyMTM1OTk2Mg.GkRuN_.IHXuAWN_6g04oYxV91eIR7GbjwDxiRFcL7alvM"
 Key: "DIRECTLEAKS"
 Prefix: "-"
 
@@ -650,7 +650,7 @@ AutoAnnouncements:
 ########################################
 
 ActivityCycling:
-    Enabled: false
+    Enabled: true
     Activities:
         - ["watching", "Tickets: {tickets}"]
         - ["playing", "Total Users: {users}"]
