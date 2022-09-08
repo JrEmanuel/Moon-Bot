@@ -1,2 +1,2 @@
-# Moon-Bot
+# Barez-Network
 Simple Discord Bot
